@@ -1,9 +1,9 @@
 import * as React from "react"
 import Layout from "../components/layout"
+import Header from "../components/Header"
 import { StaticImage } from "gatsby-plugin-image"
 
 const pageStyles = {
-  padding: '2rem',
   width: '100%',
   display: 'flex',
   flexDirection: 'column',
@@ -13,6 +13,7 @@ const pageStyles = {
 const IndexPage = () => {
   return (
     <Layout>
+      <Header />
       <main style={pageStyles}>
         <h1>Marco Medeiros</h1>
         <StaticImage 
