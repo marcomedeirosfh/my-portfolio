@@ -6,8 +6,11 @@ import { StaticImage } from "gatsby-plugin-image"
 const pageStyles = {
   width: '100%',
   display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'center'
+  flexDirection: 'row',
+  justifyContent: 'center',
+  alignItems: 'center',
+  marginTop: '10vh',
+  padding: '5rem',
 }
 
 const IndexPage = () => {
