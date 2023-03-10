@@ -1,57 +1,51 @@
-import React from "react";
-import styled from "styled-components";
+import React from "react"
 import { FaGithub, FaLinkedinIn } from "react-icons/fa"
-import logo from "../images/logo.svg"
-import { Link } from "gatsby";
+import { Link } from 'gatsby';
+import { AppBar, IconButton, List, ListItem, ListItemIcon, styled } from "@mui/material"
+import logo from '../images/logo.svg'
 
-const StyledHeader = styled.header`
+const StyledHeader = styled(AppBar)`
     padding: 0.5rem;
     height: 10vh;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    background-color: var(--blue-900);
 
-    .nav-links-list {
-        display: flex;
-        flex-direction: row; 
-        list-style: none;
-    }
-
-    .nav-link {
-        vertical-align: middle;
+    .social-links-list {
+        display: inherit;
     }
 
     .my-logo {
-        width: 80px;
+        width: 150px;
     }
 `
 
 const Header = () => {
     return (
         <StyledHeader>
-            <nav className="nav-menu">
-                <ul className="nav-links-list">
-                    <li className="nav-link">
-                        <Link to="/">
-                            <img className="my-logo" src={logo} alt="Marco's logo" />
-                        </Link>
-                    </li>
-                    <li className="nav-link">
-                        <Link to="https://www.linkedin.com/in/marco-medeiros-filho/">
+            <Link to="/" className="logo-button">
+                <IconButton>
+                    <img src={logo} alt="Marco's logo" className="my-logo"/>
+                </IconButton>
+            </Link>
+            <List className="social-links-list">
+                <ListItem>
+                    <Link to="https://www.linkedin.com/in/marco-medeiros-filho/">
+                        <ListItemIcon>
                             <FaLinkedinIn size={36} color="#00F0B4" />
-                        </Link>
-                    </li>
-                    <li className="nav-link">
-                        <Link to="https://github.com/marcomedeirosfh">
+                        </ListItemIcon>
+                    </Link>
+                </ListItem>
+                <ListItem>
+                    <Link to="https://github.com/marcomedeirosfh">
+                        <ListItemIcon>
                             <FaGithub size={36} color="#00F0B4"/>
-                        </Link>
-                    </li>
-                </ul>
-            </nav>
-            
-            
-            
+                        </ListItemIcon>
+                    </Link>
+                </ListItem>
+            </List>
         </StyledHeader>
     )
 }
