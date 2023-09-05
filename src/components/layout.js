@@ -17,9 +17,19 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
+    min-height: 100vh;
     background: var(--blue-900);
-    color: var(--neon-green)
+    color: var(--neon-green);
+    display: flex;
+    flex-direction: column;
+    padding: 5rem;
   }
+
+  @media (max-width: 740px) {
+      body {
+        padding: 1rem;
+      }
+    }
 `
 
 export default function Layout({ children }) {
