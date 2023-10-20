@@ -43,6 +43,10 @@ const StyledHeader = styled(AppBar)`
 
     @media (max-width: 740px) {
         padding: 0.5rem 1rem;
+
+        .my-logo {
+            font-size: 1.2rem;
+        }
     }
 `
 

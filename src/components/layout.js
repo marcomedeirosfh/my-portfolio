@@ -1,5 +1,6 @@
 import React from "react"
 import { createGlobalStyle } from "styled-components"
+import logo from '../images/logo.svg'
 
 const GlobalStyle = createGlobalStyle`
   :root {
@@ -44,6 +45,8 @@ export default function Layout({ children }) {
     return (
       <React.Fragment>
         <GlobalStyle/>
+        <title>Marco Medeiros - UI and UX</title>
+        <meta name="description" content="Designer and developer - React - Figma - HTML - CSS - Javascript"></meta>
         <link rel="preconnect" href="https://fonts.googleapis.com"></link>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin></link>
         <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet"></link>

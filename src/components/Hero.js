@@ -21,6 +21,10 @@ const StyledHero = styled('section')`
         font-size: 4rem;
     }
 
+    img {
+        width: 80px;
+    }
+
     @media only screen and (max-width: 860px) {
         width: 90%;
         margin: auto;

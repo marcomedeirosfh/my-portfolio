@@ -23,11 +23,3 @@ const IndexPage = () => {
 }
 
 export default IndexPage
-
-export const Head = () => {
-  <>
-    <title>Marco Medeiros - UI and UX</title>
-    <meta>Designer and developer - React - Figma - HTML - CSS - Javascript</meta>
-    <link rel="icon" type="image/png" href="../images/favicon.png" />
-  </>
-}

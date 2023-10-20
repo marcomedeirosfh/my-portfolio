@@ -3,8 +3,10 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `My portfolio`,
-    siteUrl: `https://www.yourdomain.tld`
+    title: `Marco Medeiros - UI and UX`,
+    description: `Designer and Developer`,
+    twitterUsername: `@medeirosux`,
+    siteUrl: `https://marcola.dev`,
   },
   plugins: [
     "gatsby-plugin-styled-components",
@@ -16,6 +18,12 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        icon: 'src/images/logo.svg',
       },
     },
   ]
