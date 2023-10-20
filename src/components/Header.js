@@ -1,61 +1,62 @@
 import React from "react"
-import { FaGithub, FaLinkedinIn } from "react-icons/fa"
-import { Link } from 'gatsby';
-import { AppBar, List, ListItem, ListItemIcon } from "@mui/material"
+import { AppBar, List, ListItem, ListItemButton, ButtonBase } from "@mui/material"
 import { styled } from '@mui/system'
 
 const StyledHeader = styled(AppBar)`
-    padding: 0.5rem 5rem;
-    height: 10vh;
+    padding: 1rem 5rem;
+    height: 80px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     background-color: var(--blue-900);
-
-    .social-links-list {
-        display: inherit;
+    border-bottom: 1px solid var(--blue-100);
+    box-shadow: none;
+    &:hover {
+        border-bottom: 1px solid var(--green-100);
+        transition: 700ms;
     }
+
 
     .my-logo {
         text-decoration: none;
-        color: var(--neon-green);
-        font-size: 1.5rem;
+        color: var(--blue-100);
+        font-size: 2rem;
+        font-weight: 400;
+        &:hover {
+            color: var(--green-100);
+            transition: 700ms;
+        }
+    }
+
+    h1 {
+        font-weight: 500;
+    }
+
+    .menu-button {
+        font-size: 16px;
+        color: var(--blue-100);
+        &:hover {
+            color: var(--green-100);
+        }
     }
 
     @media (max-width: 740px) {
         padding: 0.5rem 1rem;
-
-        .my-logo {
-            font-size: 1rem;  
-        }
-
-        .social-icon, li {
-            width: 24px;
-        }
     }
 `
 
-const Header = () => {
+const Header = ({setView}) => {
     return (
         <StyledHeader>
-            <Link to="/" className="my-logo">
-                <h1>Marco Medeiros</h1>
-            </Link>
-            <List className="social-links-list">
+            <ButtonBase onClick={() => setView('hero')}>
+                <h1 className="my-logo">Marco Medeiros</h1>
+            </ButtonBase>
+            <List>
                 <ListItem>
-                    <Link to="https://www.linkedin.com/in/marco-medeiros-filho/">
-                        <ListItemIcon>
-                            <FaLinkedinIn size={36} color="#00F0B4" className="social-icon" />
-                        </ListItemIcon>
-                    </Link>
-                </ListItem>
-                <ListItem>
-                    <Link to="https://github.com/marcomedeirosfh">
-                        <ListItemIcon>
-                            <FaGithub size={36} color="#00F0B4" className="social-icon"/>
-                        </ListItemIcon>
-                    </Link>
+                    <ListItemButton className="menu-button" onClick={() => setView('about')}>
+                        About
+                    </ListItemButton>
                 </ListItem>
             </List>
         </StyledHeader>
